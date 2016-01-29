@@ -1,0 +1,205 @@
+﻿@import "utility.less";
+@import "variable.less";
+@import "mixins.less";
+
+body {
+    .horizontal-gradient(#f3f7fc, #d6def0);
+    font-family: @yazi-tipi;
+    .user-select();
+}
+
+.todoContainer {
+    margin-top: 50px;
+    .center-block();
+    .size(350px, auto);
+
+    > .logo {
+        .center-block();
+        .size(350px, 100px);
+        background: url('../images/baLogo.png');
+    }
+}
+
+
+.formInsertContainer {
+    .horizontal-gradient(#527ba6, #2e4d72);
+    .size(auto, 50px);
+    .border-radius(3px;);
+    .drop-shadow(0px, 0px, 30px, 0, 0.25);
+    margin: 30px 0 10px 0;
+
+    .input-control {
+        &:extend(.pull-left);
+        background-color: transparent;
+        border-color: transparent;
+        border: 0 solid;
+        color: #fff;
+        line-height: 50px;
+        padding: 10px;
+        font-size: 18px;
+        outline: none;
+        .size(280px, 30px);
+
+        &::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .input-add {
+        border: 0 solid transparent;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+
+        &:active {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .square(50px);
+
+        .signContainer {
+            .center-block();
+            cursor: pointer;
+            display: block;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+        .signContainer .part1 {
+            height: 3px;
+            width: 14px;
+            background: white;
+            display: block;
+            position: relative;
+            top: 50%;
+            margin: -1px auto;
+            transition: all 250ms ease;
+        }
+
+        .signContainer .part2 {
+            height: 3px;
+            width: 14px;
+            background: white;
+            display: block;
+            position: relative;
+            top: 50%;
+            margin: -3px auto;
+            transition: all 250ms ease;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .signContainer:hover .part1 {
+            top: 12px;
+            left: 6px;
+            margin: 0;
+            width: 5px;
+            -webkit-transform: rotate(45deg);
+            -webkit-transform-origin: 30% 40%;
+            transform: rotate(45deg);
+            transform-origin: 30% 40%;
+        }
+
+        .signContainer:hover .part2 {
+            top: 9px;
+            left: 8px;
+            margin: 0;
+            width: 11px;
+            -webkit-transform: rotate(-45deg);
+            -webkit-transform-origin: 30% 40%;
+            transform: rotate(-45deg);
+            transform-origin: 30% 40%;
+        }
+    }
+}
+
+.todoItemContainer {
+
+    ul.todoItem {
+        margin: 0;
+        padding: 0;
+
+        > li {
+            .border-radius(3px;);
+            .drop-shadow(0px, 0px, 30px, 0, 0.25);
+            background: #fff;
+            display: block;
+            list-style: none;
+            padding: 15px;
+            margin-bottom: 10px;
+
+            label {
+                display: block;
+                cursor: pointer;
+
+                .title {
+                    color: #387cbb;
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-top: -5px;
+                    position: absolute;
+                }
+
+                .date {
+                    margin-left: 38px;
+                    color: #a8a8a8;
+                    font-size: 11px;
+                    display: block;
+                    margin-top: -5px;
+                }
+
+                .checkbox {
+                    position: relative;
+                    margin: 0 25px 0 0;
+                    cursor: pointer;
+
+                    &:before {
+                        -webkit-transition: all 0.3s ease-in-out;
+                        -moz-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        z-index: 1;
+                        width: 1rem;
+                        height: 1rem;
+                        border: 2px solid #f2f2f2;
+                    }
+
+                    &:checked:before {
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        height: .5rem;
+                        border-color: #009688;
+                        border-top-style: none;
+                        border-right-style: none;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: -0.125rem;
+                        left: 0;
+                        width: 1.1rem;
+                        height: 1.1rem;
+                        background: #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.done {
+    opacity: 0.4;
+    .title {
+        text-decoration: line-through;
+    }
+}
