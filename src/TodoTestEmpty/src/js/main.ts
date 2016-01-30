@@ -12,6 +12,7 @@ interface ITodoItem {
     addTodo(item: IItem): boolean,
     getTodos(),
     updateTodo(index: number, status: boolean),
+    removeTodo(index: number),
 }
 
 class Todo implements ITodoItem {
@@ -21,11 +22,12 @@ class Todo implements ITodoItem {
         todos.push(item);
         window.sessionStorage.setItem("todo", JSON.stringify(todos));
 
-        var rows = '<li>'
+        var rows = '<li data-index="' + (todos.length - 1) + '">'
             + ' <label>'
             + ' <input type="checkbox" class="checkbox">'
             + ' <span class="title">' + item.baslik + '</span>'
             + ' <span class="date">' + item.tarih + '</span>'
+            + ' <button class="removeTodo">X</button>'
             + '</label>'
             + '</li>';
 
@@ -35,6 +37,7 @@ class Todo implements ITodoItem {
     }
 
     getTodos() {
+        $(".todoItem li").remove();
         var localTodos = window.sessionStorage.getItem("todo");
         if (localTodos) {
             todos = JSON.parse(localTodos);
@@ -50,6 +53,7 @@ class Todo implements ITodoItem {
                     + ' <input type="checkbox" class="checkbox" ' + itemChecked + '>'
                     + ' <span class="title">' + catsToItem.baslik + '</span>'
                     + ' <span class="date">' + catsToItem.tarih + '</span>'
+                    + ' <button class="removeTodo">X</button>'
                     + '</label>'
                     + '</li>';
                 $(".todoItem").append(rows);
@@ -58,8 +62,17 @@ class Todo implements ITodoItem {
     }
 
     updateTodo(index: number, status: boolean) {
-        todos[index].done = status;
+        if (todos[index]) {
+            todos[index].done = status;
+            window.sessionStorage.setItem("todo", JSON.stringify(todos));
+        }
+        this.getTodos();
+    }
+
+    removeTodo(index: number) {
+        todos.splice(index, 1);
         window.sessionStorage.setItem("todo", JSON.stringify(todos));
+        this.getTodos();
     }
 };
 
@@ -79,8 +92,6 @@ $(document).ready(() => {
         $("#txtTodoName").val("");
     });
 
-
-
     $(document).on('click', 'li label', function (event) {
         var itemIndex = $(this).parent().data("index");
 
@@ -92,6 +103,12 @@ $(document).ready(() => {
             todo.updateTodo(itemIndex, false);
         }
     });
+
+    $(document).on('click', '.removeTodo', function(event) {
+        var itemIndex = $(this).parents("li").data("index");
+        todo.removeTodo(itemIndex);
+    });
+
 
 });
 
