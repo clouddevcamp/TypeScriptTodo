@@ -1,0 +1,44 @@
+.todoContainer,.todoContainer>.logo{margin-left:auto;margin-right:auto;width:350px}
+.clearfix:after,.clearfix:before{content:" ";display:table}
+.clearfix:after{clear:both}
+.center-block{display:block;margin-left:auto;margin-right:auto}
+.pull-right{float:right!important}
+.formInsertContainer .input-control,.pull-left{float:left!important}
+.text-left{text-align:left}
+.text-right{text-align:right}
+.text-center{text-align:center}
+.text-justify{text-align:justify}
+.text-nowrap{white-space:nowrap}
+.hide{display:none!important}
+.show{display:block!important}
+.invisible{visibility:hidden}
+.hidden{display:none!important;visibility:hidden!important}
+.text-lowercase{text-transform:lowercase}
+.text-uppercase{text-transform:uppercase}
+.text-capitalize{text-transform:capitalize}
+body{background-color:#f3f7fc;background-image:-webkit-gradient(linear,left top,right top,from(#f3f7fc),to(#d6def0));background-image:-webkit-linear-gradient(left,#f3f7fc,#d6def0);background-image:-moz-linear-gradient(left,#f3f7fc,#d6def0);background-image:-ms-linear-gradient(left,#f3f7fc,#d6def0);background-image:-o-linear-gradient(left,#f3f7fc,#d6def0);font-family:'Segoe UI light';-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.todoContainer{margin-top:20px;display:block;height:auto}
+.todoContainer>.logo{display:block;height:100px;background:url(../images/baLogo.png)}
+.formInsertContainer{background-color:#527ba6;background-image:-webkit-gradient(linear,left top,right top,from(#527ba6),to(#2e4d72));background-image:-webkit-linear-gradient(left,#527ba6,#2e4d72);background-image:-moz-linear-gradient(left,#527ba6,#2e4d72);background-image:-ms-linear-gradient(left,#527ba6,#2e4d72);background-image:-o-linear-gradient(left,#527ba6,#2e4d72);width:auto;height:50px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;-webkit-box-shadow:0 0 30px 0 rgba(0,0,0,.25);-moz-box-shadow:0 0 30px 0 rgba(0,0,0,.25);box-shadow:0 0 30px 0 rgba(0,0,0,.25);margin:30px 0 20px}
+.formInsertContainer .input-control{background-color:transparent;border:0 solid;color:#fff;line-height:50px;padding:10px;font-size:18px;outline:0;width:280px;height:30px}
+.formInsertContainer .input-control::-webkit-input-placeholder{color:rgba(255,255,255,.8)}
+.formInsertContainer .input-add{border:0 solid transparent;background-color:transparent;outline:0;cursor:pointer;width:50px;height:50px}
+.formInsertContainer .input-add:active{background:rgba(255,255,255,.1)}
+.formInsertContainer .input-add .signContainer{margin-left:auto;margin-right:auto;cursor:pointer;display:block;top:50%;left:50%;width:24px;height:24px;border-radius:50%}
+.formInsertContainer .input-add .signContainer .part1{height:3px;width:14px;background:#fff;display:block;position:relative;top:50%;margin:-1px auto;transition:all 250ms ease}
+.formInsertContainer .input-add .signContainer .part2{height:3px;width:14px;background:#fff;display:block;position:relative;top:50%;margin:-3px auto;transition:all 250ms ease;-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+.formInsertContainer .input-add .signContainer:hover .part1{top:12px;left:6px;margin:0;width:5px;-webkit-transform:rotate(45deg);-webkit-transform-origin:30% 40%;transform:rotate(45deg);transform-origin:30% 40%}
+.formInsertContainer .input-add .signContainer:hover .part2{top:9px;left:8px;margin:0;width:11px;-webkit-transform:rotate(-45deg);-webkit-transform-origin:30% 40%;transform:rotate(-45deg);transform-origin:30% 40%}
+.todoItemContainer ul.todoItem{margin:0;padding:0}
+.todoItemContainer ul.todoItem>li{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;-webkit-box-shadow:0 0 30px 0 rgba(0,0,0,.25);-moz-box-shadow:0 0 30px 0 rgba(0,0,0,.25);box-shadow:0 0 30px 0 rgba(0,0,0,.25);background:#fff;display:block;list-style:none;padding:15px;margin-bottom:15px;position:relative}
+.todoItemContainer ul.todoItem>li:hover .removeTodo{display:block}
+.todoItemContainer ul.todoItem>li label{display:block;cursor:pointer}
+.todoItemContainer ul.todoItem>li label .title{color:#387cbb;font-size:14px;font-weight:700;margin-top:-5px;position:absolute}
+.todoItemContainer ul.todoItem>li label .date{margin-left:38px;color:#a8a8a8;font-size:11px;display:block;margin-top:-5px}
+.todoItemContainer ul.todoItem>li label .checkbox{position:relative;margin:0 25px 0 0;cursor:pointer}
+.todoItemContainer ul.todoItem>li label .checkbox:before{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out;content:"";position:absolute;left:0;z-index:1;width:1rem;height:1rem;border:2px solid #f2f2f2}
+.todoItemContainer ul.todoItem>li label .checkbox:checked:before{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);height:.5rem;border-color:#009688;border-top-style:none;border-right-style:none}
+.todoItemContainer ul.todoItem>li label .checkbox:after{content:"";position:absolute;top:-.125rem;left:0;width:1.1rem;height:1.1rem;background:#fff;cursor:pointer}
+.todoItemContainer ul.todoItem>li label .removeTodo{display:none;cursor:pointer;top:-10px;position:absolute;right:-10px;background:#E91E63;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:0;width:25px;height:25px;color:#fff;font-weight:700;text-align:center;font-size:11px}
+.done{opacity:.6}
+.done .title{text-decoration:line-through}
