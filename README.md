@@ -13,8 +13,11 @@ http://goo.gl/riSNiH
 ---------------------------
 
 Microsoft Türkiye Bulut Geliştirici Kampı
+
 Microsoft Türkiye ve Bilge Adam Yazılım danışmanları | 30.01.2016
+
 Microsoft Türkiye Bulut Geliştirici Kampı
+
 Başlangıç - Bitiş Saati : 09:30 - 17:30
 Yer : Microsoft İstanbul Ofisi
 İlgili Alanlar : Yazılım geliştirme, mobil programlama, Microsoft, cloud, bulut bilişim, ASP.NET, Visual Studio, Azure, Docker, Apache Cordova, XamarinSertifika : 
